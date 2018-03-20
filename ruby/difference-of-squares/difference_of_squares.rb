@@ -16,6 +16,6 @@ class Squares
   end
 
   def sum_of_squares
-    @range.map { |n| n ** 2 }.sum
+    @range.sum { |n| n ** 2 }
   end
 end
