@@ -5,14 +5,14 @@ end
 class Prime
   class << self
     def nth(num)
-      raise ArgumentError.new if num == 0
+      raise ArgumentError.new if num <= 0
 
       found_primes = 1
       current_prime = 2
       n = 2
 
       while found_primes <= num
-        is_prime = 2.upto(n-1).any? { |k| n % k == 0 } == false
+        is_prime = (3..Math.sqrt(n).floor).any? { |k| n % k == 0 } == false
 
         if is_prime
           current_prime = n
