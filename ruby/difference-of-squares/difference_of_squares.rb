@@ -1,10 +1,10 @@
 module BookKeeping
-  VERSION = 3
+  VERSION = 4
 end
 
 class Squares
   def initialize(num)
-    @num = num
+    @range = 1.upto(num)
   end
 
   def difference
@@ -12,10 +12,10 @@ class Squares
   end
 
   def square_of_sum
-    1.upto(@num).reduce(0, :+) ** 2
+    @range.sum ** 2
   end
 
   def sum_of_squares
-    1.upto(@num).map { |n| n ** 2 }.reduce(0, :+)
+    @range.map { |n| n ** 2 }.sum
   end
 end
