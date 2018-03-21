@@ -1,5 +1,5 @@
 module BookKeeping
-  VERSION = 2
+  VERSION = 3
 end
 
 class Prime
@@ -12,9 +12,7 @@ class Prime
       n = 2
 
       while found_primes <= num
-        is_prime = (3..Math.sqrt(n).floor).any? { |k| n % k == 0 } == false
-
-        if is_prime
+        if is_prime?(n)
           current_prime = n
           found_primes += 1
         end
@@ -23,6 +21,12 @@ class Prime
       end
 
       current_prime
+    end
+
+    def is_prime?(num)
+      return false if (num.even? && num > 2) || num < 2
+
+      (2..Math.sqrt(num).floor).none? { |k| num % k == 0 }
     end
   end
 end
