@@ -5,4 +5,7 @@ end
 class School
   def add
   end
+
+  def students
+  end
 end
