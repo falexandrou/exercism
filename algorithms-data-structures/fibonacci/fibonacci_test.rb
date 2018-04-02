@@ -31,4 +31,14 @@ class FibonacciTest < Minitest::Test
     fib = Fibonacci.new
     assert_equal 6_765, fib.seq(20)
   end
+
+  def test_iterative_returns_13_for_7
+    fib = Fibonacci.new
+    assert_equal 13, fib.iterative(7)
+  end
+
+  def test_iterative_returns_6765_for_20
+    fib = Fibonacci.new
+    assert_equal 6_765, fib.iterative(20)
+  end
 end

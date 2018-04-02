@@ -10,7 +10,7 @@ class School
   end
 
   def add person, grade
-    @hashmap[grade] ||= ::Set.new
+    @hashmap[grade] ||= Set.new
     @hashmap[grade] << person
     @hashmap[grade] = @hashmap[grade].sort
   end
